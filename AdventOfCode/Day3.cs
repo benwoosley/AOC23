@@ -115,18 +115,14 @@ public abstract class Day3
                 // found a '*'
                 var countNumbers = 0;
                 var currNums = new List<string>();
-                foreach (var direction in Directions)
+                var i1 = i;
+                var j1 = j;
+                foreach (var direction in from direction in Directions let iIdx = i1 + direction[0] let jIdx = j1 + direction[1] where char.IsDigit(lines[iIdx][jIdx]) && !visited[iIdx, jIdx] select direction)
                 {
-                    var iIdx = i + direction[0];
-                    var jIdx = j + direction[1];
-                    if (char.IsDigit(lines[iIdx][jIdx]) && !visited[iIdx,jIdx])
-                    {
-                        countNumbers++;
-                        var num = GetNumber(lines, i + direction[0], j + direction[1], visited);
-                        currNums.Add(num);
-                    }
+                    countNumbers++;
+                    var num = GetNumber(lines, i + direction[0], j + direction[1], visited);
+                    currNums.Add(num);
                 }
-
                 if (countNumbers == 2)
                 {
                     total += int.Parse(currNums[1]) * int.Parse(currNums[0]);

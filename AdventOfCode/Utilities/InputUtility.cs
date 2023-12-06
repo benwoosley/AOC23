@@ -1,6 +1,6 @@
-namespace AdventOfCode;
+namespace AdventOfCode.Utilities;
 
-public abstract class Utility
+public abstract class InputUtility
 {
     public static List<string> GetLines(string inputFile)
     {

@@ -1,4 +1,6 @@
-namespace AdventOfCode;
+using AdventOfCode.Interfaces;
+
+namespace AdventOfCode.Days;
 
 public class Day5: IDay
 {

@@ -1,5 +1,9 @@
-namespace AdventOfCode;
-using static Utility;
+using AdventOfCode.Interfaces;
+using AdventOfCode.Utilities;
+
+namespace AdventOfCode.Days;
+
+using static InputUtility;
 
 // Trebuchet?!
 public class Day1: IDay

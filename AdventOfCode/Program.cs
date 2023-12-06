@@ -15,5 +15,5 @@ using AdventOfCode;
 // Console.WriteLine("Part 2: " + Day3.Part2());
 
 Console.WriteLine("Day 4 - Scratchcards");
-var day4 = new Day4();
-Console.WriteLine("Part 1: " + day4.Part1());
+Console.WriteLine("Part 1: " + Day4.Part1());
+Console.WriteLine("Part 2: " + Day4.Part2());

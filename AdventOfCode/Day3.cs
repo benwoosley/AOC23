@@ -1,5 +1,3 @@
-using System.IO.Pipes;
-
 namespace AdventOfCode;
 
 using static Utility;
@@ -109,7 +107,7 @@ public abstract class Day3
         
         for (var i = 1; i < lines.Count - 1; i++)
         {
-            for (var j = 1; j < lines[i].Length; j++)
+            for (var j = 1; j < lines[i].Length - 1; j++)
             {
                 if (lines[i][j] != '*') continue;
                 // found a '*'
@@ -123,10 +121,7 @@ public abstract class Day3
                     var num = GetNumber(lines, i + direction[0], j + direction[1], visited);
                     currNums.Add(num);
                 }
-                if (countNumbers == 2)
-                {
-                    total += int.Parse(currNums[1]) * int.Parse(currNums[0]);
-                }
+                if (countNumbers == 2) total += int.Parse(currNums[1]) * int.Parse(currNums[0]);
             }
         }
         return total;

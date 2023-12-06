@@ -2,22 +2,24 @@ namespace AdventOfCode;
 
 using static Utility;
 
-public abstract class Day3
+public class Day3: IDay
 {
     private const string InputFile = "/Users/bdw/RiderProjects/AdventOfCode/AdventOfCode/input/day3_input.txt";
     private const string TestFile = "/Users/bdw/RiderProjects/AdventOfCode/AdventOfCode/input/day3_test.txt";
 
-    private static readonly List<List<int>> Directions = new List<List<int>>
-    {
-        new List<int>() { -1, -1 }, // behind top diagonal
-        new List<int>() { -1, 0 }, // behind
-        new List<int>(){-1, 1}, // behind bottom diagonal
-        new List<int>(){0, 1}, // below 
-        new List<int>(){1, 1}, // front bottom diagonal 
-        new List<int>(){1, 0}, // front 
-        new List<int>(){1, -1}, // front top diagonal
-        new List<int>(){0, -1} // above 
-    };
+    public string Title { get; set; } = "--- Day 3: Gear Ratios ---";
+
+    private static readonly List<List<int>> Directions =
+    [
+        [-1, -1], // behind top diagonal
+        [-1, 0], // behind
+        [-1, 1], // behind bottom diagonal
+        [0, 1], // below 
+        [1, 1], // front bottom diagonal 
+        [1, 0], // front 
+        [1, -1], // front top diagonal
+        [0, -1]
+    ];
 
     // directions:
     // front
@@ -32,8 +34,9 @@ public abstract class Day3
     // . . . . . .
     // . a b c d . 
     // . . . . . . 
-    
-    public static int Part1()
+
+
+    public int Part1()
     {
        var total = 0;
        var lines = GetLines(InputFile);
@@ -98,7 +101,7 @@ public abstract class Day3
         return res;
     }
     
-    public static int Part2()
+    public int Part2()
     {
         var total = 0;
         var lines = GetLines(InputFile);

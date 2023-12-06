@@ -2,11 +2,13 @@ namespace AdventOfCode;
 using static Utility;
 
 // Trebuchet?!
-public abstract class Day1
+public class Day1: IDay
 {
-    private const string InputFile = "/Users/bdw/RiderProjects/AdventOfCode/AdventOfCode/input/day1_input.txt";
 
-    public static int Part1()
+    private const string InputFile = "/Users/bdw/RiderProjects/AdventOfCode/AdventOfCode/input/day1_input.txt";
+    public string Title { get; set; } = "--- Day 1: Trebuchet?! ---";
+
+    public int Part1()
     {
         var total = 0;
         var lines = GetLines(InputFile);
@@ -61,7 +63,7 @@ public abstract class Day1
             return replace.Where(char.IsDigit).Aggregate("", (current, c) => current + c);
     }
 
-    public static int Part2()
+    public int Part2()
     {
         var total = 0;
         var lines = GetLines(InputFile);

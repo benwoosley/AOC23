@@ -27,31 +27,14 @@ public class Day4
             }
             res.Add(currHashSet);
         }
-
         return res;
     }
     
     public int Part1()
     {
         var lines = GetLines(TestFile);
-
         var cards =  GetMap(lines);
         var games = lines.Select(line => line.Split('|')[1].Split(' ').Where(num => num != "").ToList()).ToList();
-        var total = 0;
-        
-        for (var i = 0; i < games.Count; i++)
-        {
-            var currPower = -1;
-            foreach (var num in games[i])
-            {
-                if (cards[i].Contains(num))
-                {
-                    currPower++;
-                }
-            }
-            if (currPower >= 0)
-                 total += 1 << currPower;
-        }
-        return total;
+        return games.Select((t, i) => -1 + t.Count(num => cards[i].Contains(num))).Where(currPower => currPower >= 0).Sum(currPower => 1 << currPower);
     }
 }

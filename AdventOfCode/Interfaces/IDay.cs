@@ -7,6 +7,7 @@ public interface IDay
         get;
         set;
     }
-    public  int Part1();
-    public int Part2();
+    
+    public  object Part1();
+    public object Part2();
 }

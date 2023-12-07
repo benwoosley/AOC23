@@ -33,7 +33,7 @@ public class Day4: IDay
     }
 
 
-    public int Part1()
+    public object Part1()
     {
         var lines = GetLines(InputFile);
         var cards =  GetMap(lines);
@@ -41,7 +41,7 @@ public class Day4: IDay
         return games.Select((t, i) => -1 + t.Count(num => cards[i].Contains(num))).Where(currPower => currPower >= 0).Sum(currPower => 1 << currPower);
     }
 
-    public int Part2()
+    public object Part2()
     {
         var lines = GetLines(InputFile);
         var instances = new List<int>();

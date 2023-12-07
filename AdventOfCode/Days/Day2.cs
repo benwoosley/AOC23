@@ -25,7 +25,7 @@ public class Day2: IDay
         return newLines.All(newLine => !newLine.Split(",").Select(val => val[1..].Split(" ")).Any(splitStr => dict[splitStr[1]] < int.Parse(splitStr[0])));
     }
 
-    public int Part1()
+    public object Part1()
     {
         var lines = GetLines(InputFile);
         var total = 0;
@@ -66,7 +66,7 @@ public class Day2: IDay
          return list.Aggregate(1, (current, power) => current * power);
      }
     
-    public int Part2()
+    public object Part2()
     {
         return GetLines(InputFile).Sum(GetPower);
     }

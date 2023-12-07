@@ -39,7 +39,7 @@ public class Day3: IDay
     // . . . . . . 
 
 
-    public int Part1()
+    public object Part1()
     {
        var total = 0;
        var lines = GetLines(InputFile);
@@ -104,7 +104,7 @@ public class Day3: IDay
         return res;
     }
     
-    public int Part2()
+    public object Part2()
     {
         var total = 0;
         var lines = GetLines(InputFile);

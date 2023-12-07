@@ -12,7 +12,7 @@ public class Day1: IDay
     private const string InputFile = "/Users/bdw/RiderProjects/AdventOfCode/AdventOfCode/input/day1_input.txt";
     public string Title { get; set; } = "--- Day 1: Trebuchet?! ---";
 
-    public int Part1()
+    public object Part1()
     {
         var total = 0;
         var lines = GetLines(InputFile);
@@ -67,7 +67,7 @@ public class Day1: IDay
             return replace.Where(char.IsDigit).Aggregate("", (current, c) => current + c);
     }
 
-    public int Part2()
+    public object Part2()
     {
         var total = 0;
         var lines = GetLines(InputFile);
